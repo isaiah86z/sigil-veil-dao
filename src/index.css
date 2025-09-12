@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Secret Society DAO Design System - Mystical & Anonymous */
+
+@layer base {
+  :root {
+    /* Core Colors - Deep mystical palette */
+    --background: 260 25% 8%;
+    --foreground: 280 20% 92%;
+
+    --card: 260 20% 12%;
+    --card-foreground: 280 15% 88%;
+
+    --popover: 260 25% 10%;
+    --popover-foreground: 280 20% 90%;
+
+    /* Mystical primary - Deep purple with ethereal glow */
+    --primary: 275 60% 45%;
+    --primary-foreground: 280 25% 95%;
+    --primary-glow: 275 80% 65%;
+
+    /* Secondary - Darker purple for depth */
+    --secondary: 260 30% 15%;
+    --secondary-foreground: 280 20% 85%;
+
+    /* Muted tones for subtle elements */
+    --muted: 260 15% 18%;
+    --muted-foreground: 280 10% 60%;
+
+    /* Accent - Glowing cyan for sigils */
+    --accent: 180 100% 50%;
+    --accent-foreground: 260 25% 8%;
+    --accent-glow: 180 100% 70%;
+
+    /* Destructive - Mystical red */
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 280 25% 95%;
+
+    /* Borders and inputs */
+    --border: 260 20% 25%;
+    --input: 260 25% 18%;
+    --ring: 275 60% 45%;
+
+    /* Gradients for mystical effects */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-mystical: linear-gradient(180deg, hsl(var(--background)), hsl(260 30% 12%));
+    --gradient-sigil: radial-gradient(circle, hsl(var(--accent-glow) / 0.8), transparent 70%);
+
+    /* Shadows with glowing effects */
+    --shadow-glow: 0 0 30px hsl(var(--primary-glow) / 0.3);
+    --shadow-sigil: 0 0 40px hsl(var(--accent) / 0.4);
+    --shadow-card: 0 8px 32px hsl(260 40% 5% / 0.6);
+
+    /* Typography */
+    --font-display: 'Crimson Text', serif;
+    --font-body: 'Inter', sans-serif;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Single theme - always dark mystical */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    background: var(--gradient-mystical);
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  /* Glowing effects for mystical elements */
+  .glow-primary {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .glow-sigil {
+    box-shadow: var(--shadow-sigil);
+  }
+
+  .mystical-border {
+    border: 1px solid hsl(var(--border));
+    box-shadow: inset 0 0 20px hsl(var(--primary-glow) / 0.1);
+  }
+
+  /* Sigil animations */
+  .sigil-pulse {
+    animation: sigilPulse 3s ease-in-out infinite;
+  }
+
+  .sigil-rotate {
+    animation: sigilRotate 20s linear infinite;
+  }
+
+  /* Anonymous member card styling */
+  .member-card {
+    background: linear-gradient(135deg, hsl(var(--card)), hsl(var(--muted)));
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-card);
+  }
+
+  .member-card:hover {
+    border-color: hsl(var(--primary) / 0.5);
+    box-shadow: var(--shadow-card), 0 0 20px hsl(var(--primary-glow) / 0.2);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@keyframes sigilPulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes sigilRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
