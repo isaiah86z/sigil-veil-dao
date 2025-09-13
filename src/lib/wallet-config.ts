@@ -4,7 +4,7 @@ import { sepolia } from 'wagmi/chains';
 
 export const wagmiConfig = getDefaultConfig({
   appName: 'Sigil Veil DAO',
-  projectId: process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID || 'YOUR_WALLET_CONNECT_PROJECT_ID',
+  projectId: process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID || '2ec9743d0d0cd7fb94dee1a7e6d33475',
   chains: [sepolia],
   ssr: false, // If your dApp uses server side rendering (SSR)
 });
