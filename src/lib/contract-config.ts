@@ -164,7 +164,7 @@ export const CHAIN_CONFIG = {
   },
   rpcUrls: {
     default: {
-      http: ['https://sepolia.infura.io/v3/b18fb7e6ca7045ac83c41157ab93f990'],
+      http: [process.env.NEXT_PUBLIC_RPC_URL || 'https://1rpc.io/sepolia'],
     },
     public: {
       http: ['https://1rpc.io/sepolia'],

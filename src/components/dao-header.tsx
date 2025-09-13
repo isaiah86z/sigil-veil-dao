@@ -1,5 +1,5 @@
 import { WalletConnect } from '@/components/ui/wallet-connect';
-import sigilPrimary from '@/assets/sigil-primary.png';
+import SigilVeilLogo from '@/assets/sigil-veil-logo.svg?react';
 
 export const DaoHeader = () => {
   return (
@@ -9,9 +9,7 @@ export const DaoHeader = () => {
           {/* Logo and main title */}
           <div className="flex items-center space-x-6">
             <div className="relative">
-              <img 
-                src={sigilPrimary} 
-                alt="DAO Sigil" 
+              <SigilVeilLogo 
                 className="w-16 h-16 sigil-rotate glow-sigil"
               />
             </div>
